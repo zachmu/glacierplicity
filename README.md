@@ -13,6 +13,6 @@ This project was inspired by this blog article about using duplicity with glacie
 
 http://blog.epsilontik.de/?page_id=68
 
-The main thing it does (other than store each directory in its own bucket) is to make sure the .manifest files don't get rotated into glacier. It could be pretty much obsoleted if s3 made their lifecycle rules a bit more expressive, or if duplicity takes on this behavior itself.
+The main thing it does (other than split things into multiple buckets) is to make sure the .manifest files don't get rotated into glacier. It could be pretty much obsoleted if s3 made their lifecycle rules a bit more expressive, or if duplicity takes on this behavior itself.
 
 Known limitations: you only get 100 S3 buckets. If your archive is large enough (many TB), you could easily hit this limit.  At the very least, you'll need to dramatically increase the "large directory" threshold in the script, and even then some modifications will likely be necessary for it to work.
